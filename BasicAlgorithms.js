@@ -161,15 +161,18 @@ removeNeg([1,-2,34,-3,4])
 
 // --------------------------------
 
-function randomArr(){
-    var arr = [];
-    for(var i = 0; i < 10; i++){
-      var x = Math.floor(Math.random()*100+1)
-      arr[i] = x;
-    }
-    return arr;
+function RandomArr(arr){
+  var temp;
+  for(var i = 0; i<arr.length; i++){
+    var x = Math.floor(Math.random() * arr.length + 1);
+    temp = arr[i];
+    arr[i] = arr[x];
+    arr[x] = temp;
   }
-  randomArr();
+  return arr;
+}
+
+RandomArr([3,4,5,6,7,8,9]);
 // ----------------------------------
 
 function swap2val(arr){
@@ -198,15 +201,18 @@ function reverseArr(arr){
 
 //   ---------------------------
 
-function insertXinY(arr, x, y){
-    arr.push(x);
-    for(var i = arr.length-1; i>y; i--){
-      arr[i]=arr[i-1];
-    }
-    arr[y]=x;
-    return arr;
+function insertYinX(arr,y,x){
+  arr.push(y);
+  var temp;
+  for(var i=arr.length-1; i>x; i--){
+    temp = arr[i]
+    arr[i] = arr[i-1];
+    arr[i-1] = temp;
   }
-  insertXinY([1,2,3,4,5,6,7], 0 , 3);
+  return arr;
+}
+
+insertYinX([1,2,4,5],666666,1);
 
 //   ----------------------------
 
@@ -252,18 +258,21 @@ function iFactorial(num){
 
 //   --------------------
 
-function iFibonacci(num){
-    var a = 1, b = 0, temp;
-    
-    while(num >= 0){
-      temp = a;
-      a = a + b;
-      b = temp;
-      num--;
-    }
-    return b;
+function iFib(num){
+  var a = 1; 
+  var fib = 0;
+  var temp;
+  
+  while(num>=0){
+    temp = a;
+    a = a+fib;
+    fib = temp;
+    num--;
   }
-  iFibbonaci(3);
+  return fib;
+}
+
+iFib(3);
 
 // ------------------------
 
