@@ -1,1 +1,2 @@
-# algorithms_challenge
+Repository includes all my work with JavaScript essential algorithms. 
+File updating...
