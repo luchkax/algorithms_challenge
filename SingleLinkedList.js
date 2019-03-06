@@ -1,4 +1,3 @@
-node = new Node("hello");
 
 function Node(val){
   this.value = val;
